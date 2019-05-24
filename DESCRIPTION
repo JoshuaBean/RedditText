@@ -1,0 +1,21 @@
+Package: RedditText
+Title: Scrapes Reddit for the Titles
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Joshua",
+           family = "Bean",
+           role = c("aut", "cre"),
+           email = "joshua.bean@adelaide.edu.au",
+           comment = c(ORCID = "0000-0001-5703-5878"))
+Description: Takes a subreddit and scrapes it for the titles and creates a wordcloud. 
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    httr,
+    jsonlite,
+    tidytext,
+    wordcloud,
+    glue,
+    dplyr
+RoxygenNote: 6.1.1
