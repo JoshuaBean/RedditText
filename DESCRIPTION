@@ -11,11 +11,12 @@ Description: Takes a subreddit and scrapes it for the titles and creates a wordc
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: 
-    httr,
+Depends: 
     jsonlite,
     tidytext,
     wordcloud,
     glue,
-    dplyr
+    dplyr,
+    httr
 RoxygenNote: 6.1.1
+
