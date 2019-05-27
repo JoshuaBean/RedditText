@@ -1,0 +1,36 @@
+---
+title: "Reddit_title_text"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Reddit_title_text}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Load the package
+
+```{r setup, warning = FALSE}
+library(RedditText)
+```
+
+## Collecting data and creating wordcloud
+
+```{r,fig.height = 4, fig.width = 6}
+num_posts <- 500
+subreddit <- "Rabbits"
+words <- get_word_freq(num_posts, subreddit)
+knitr::kable(head(words))
+```
+
+
+
+
+
+

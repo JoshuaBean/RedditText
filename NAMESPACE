@@ -2,6 +2,7 @@
 
 export(get_500)
 export(get_word_freq)
+import(RColorBrewer)
 import(dplyr)
 import(glue)
 import(httr)

@@ -18,6 +18,11 @@ Depends:
     dplyr,
     httr,
     rlist,
-    tidytext
+    tidytext,
+    RColorBrewer
 RoxygenNote: 6.1.1
-
+Suggests: 
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

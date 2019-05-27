@@ -9,12 +9,13 @@
 #' @param num_colours The number of different colours to be used in the wordcloud
 #'
 #' @return A data frame with the 100 most common words and their frequencies and a plot of the wordcloud
-#' @import  httr
+#' @import httr
 #' @import wordcloud
 #' @import glue
 #' @import dplyr
 #' @import rlist
 #' @import tidytext
+#' @import RColorBrewer
 #' @export
 #' @examples
 #' num_posts = 10000;
