@@ -33,8 +33,7 @@ words_freq <- get_word_freq(num_posts, subreddit)
 
 #Custom plot
 get_word_freq <- get_word_freq(num_posts, subreddit,
-                                num_words = 100,
-                                colour_pallete = "Dark2",
-                                num_colours = 8)
-
+                                num_words = 50,
+                                colour_pallete = "Set1",
+                                num_colours = 5)
 }

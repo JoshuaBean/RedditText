@@ -2,3 +2,9 @@
 
 export(get_500)
 export(get_word_freq)
+import(dplyr)
+import(glue)
+import(httr)
+import(rlist)
+import(tidytext)
+import(wordcloud)

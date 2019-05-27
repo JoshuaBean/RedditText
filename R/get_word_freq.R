@@ -9,8 +9,13 @@
 #' @param num_colours The number of different colours to be used in the wordcloud
 #'
 #' @return A data frame with the 100 most common words and their frequencies and a plot of the wordcloud
+#' @import  httr
+#' @import wordcloud
+#' @import glue
+#' @import dplyr
+#' @import rlist
+#' @import tidytext
 #' @export
-#'
 #' @examples
 #' num_posts = 10000;
 #' subreddit = "rabbits"
@@ -23,7 +28,6 @@
 #'                                 num_words = 50,
 #'                                 colour_pallete = "Set1",
 #'                                 num_colours = 5)
-#'
 get_word_freq <- function(num_posts, subreddit, num_words = 100, colour_pallete = "Dark2", num_colours = 8){
 
   URL<-GET(glue("https://api.pushshift.io/reddit/search/submission/?subreddit={subreddit}&size=1"))
@@ -34,11 +38,6 @@ get_word_freq <- function(num_posts, subreddit, num_words = 100, colour_pallete 
 
   jsonParsed <- content(URL,as="parsed")
   temp_json <- jsonParsed$data
-
-  if (is_empty(temp_json)){
-    stop(paste0(subreddit," is not a valid subreddit"))
-  }
-
 
   first_post <- temp_json %>% list.select(created_utc,title) %>% unlist()
   begin_time <- first_post[1]
@@ -79,7 +78,7 @@ get_word_freq <- function(num_posts, subreddit, num_words = 100, colour_pallete 
   top_words <- title_tokens %>%
     count(word, sort = TRUE) %>% .[1:num_words,]
 
-  wordcloud(words = top_words$word, freq = top_words$n, min.freq = 1,
+  wordcloud(words = top_words$word, freq = top_words$n,min.freq=1,
             max.words=num_words, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(num_colours, colour_pallete))
 

@@ -6,6 +6,9 @@
 #' @param subreddit A valid subreddit name
 #'
 #' @return The titles of the 500 post previous to the input time of the subreddit.
+#' @import httr
+#' @import glue
+#' @import rlist
 #' @export
 #'
 #' @examples
@@ -26,10 +29,6 @@ get_500 <- function(time,subreddit){
 
   jsonParsed <- content(URL,as="parsed")
   reddit_json <- jsonParsed$data
-
-  if (is_empty(reddit_json)){
-    stop(paste0(subreddit," is not a valid subreddit"))
-  }
 
   times <- reddit_json %>% list.select(created_utc) %>% unlist
   final_time = times[length(times)]

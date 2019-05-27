@@ -13,10 +13,11 @@ Encoding: UTF-8
 LazyData: true
 Depends: 
     jsonlite,
-    tidytext,
     wordcloud,
     glue,
     dplyr,
-    httr
+    httr,
+    rlist,
+    tidytext
 RoxygenNote: 6.1.1
 
