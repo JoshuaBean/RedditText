@@ -1,6 +1,6 @@
-#' Summary statistics for world cup teams in 2010
+#' Statistics for cricket World cup from 1971 to 2017
 #'
-#' A dataset containing summary statistic for each team in World Cup 2010.
+#' A dataset containing Statistic for each game in crticket World Cup from 1971 to 2017.
 #'
 #' @format A data frame with 3932 rows and 7 variables:
 #' \describe{

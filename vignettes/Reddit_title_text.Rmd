@@ -21,6 +21,7 @@ library(RedditText)
 ```
 
 ## Collecting data and creating wordcloud
+We want a word cloud of the latest 500 posts from the subreddit r/Rabbits.
 
 ```{r,fig.height = 4, fig.width = 6}
 num_posts <- 500
@@ -28,6 +29,7 @@ subreddit <- "Rabbits"
 words <- get_word_freq(num_posts, subreddit)
 knitr::kable(head(words))
 ```
+
 
 
 
